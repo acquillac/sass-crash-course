@@ -1,0 +1,26 @@
+
+// shared styles
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+
+  &:hover {
+    transform: scale(.98);
+  }
+}
+
+.btn-primary {
+  // extending shared style
+  @extend %btn;
+  // text color is based on the background
+  @include set-background(lighten($primary-color, 10%));
+}
+
+.btn-secondary {
+  // extending shared style
+  @extend %btn;
+  // text color is based on the background
+  @include set-background($secondary-color);
+}
